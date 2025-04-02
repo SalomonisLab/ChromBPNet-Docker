@@ -474,6 +474,17 @@ dependencies:
       - nvidia-nccl-cu12==2.20.5
       - nvidia-nvjitlink-cu12==12.5.40
       - nvidia-nvtx-cu12==12.1.105
+      - nvidia-cublas-cu11
+      - nvidia-cuda-cupti-cu11
+      - nvidia-cuda-nvrtc-cu11
+      - nvidia-cuda-runtime-cu11
+      - nvidia-cudnn-cu11
+      - nvidia-cufft-cu11
+      - nvidia-curand-cu11
+      - nvidia-cusolver-cu11
+      - nvidia-cusparse-cu11
+      - nvidia-nccl-cu11
+      - nvidia-nvtx-cu11
       - oauthlib==3.2.2
       - opt-einsum==3.3.0
       - packaging==23.2

@@ -28,5 +28,9 @@ RUN conda run -n chrombpnet_v017 pip install -e /workspace/tfmodisco-lite
 RUN tar -czvf /workspace/chrombpnet.tar.gz -C /workspace chrombpnet
 RUN tar -czvf /workspace/tfmodisco-lite.tar.gz -C /workspace tfmodisco-lite
 
+ENV LD_LIBRARY_PATH=/opt/conda/envs/chrombpnet_v017/lib/python3.8/site-packages/nvidia/cublas/lib:/opt/conda/envs/chrombpnet_v017/lib/python3.8/site-packages/nvidia/cuda_cupti/lib:/opt/conda/envs/chrombpnet_v017/lib/python3.8/site-packages/nvidia/cuda_nvrtc/lib:/opt/conda/envs/chrombpnet_v017/lib/python3.8/site-packages/nvidia/cuda_runtime/lib:/opt/conda/envs/chrombpnet_v017/lib/python3.8/site-packages/nvidia/cudnn/lib:/opt/conda/envs/chrombpnet_v017/lib/python3.8/site-packages/nvidia/cufft/lib:/opt/conda/envs/chrombpnet_v017/lib/python3.8/site-packages/nvidia/curand/lib:/opt/conda/envs/chrombpnet_v017/lib/python3.8/site-packages/nvidia/cusolver/lib:/opt/conda/envs/chrombpnet_v017/lib/python3.8/site-packages/nvidia/cusparse/lib:/opt/conda/envs/chrombpnet_v017/lib/python3.8/site-packages/nvidia/nccl/lib:/opt/conda/envs/chrombpnet_v017/lib/python3.8/site-packages/nvidia/nvjitlink/lib:/opt/conda/envs/chrombpnet_v017/lib/python3.8/site-packages/nvidia/nvtx/lib
+
+ENV PATH="$PATH:/opt/conda/envs/chrombpnet_v017/lib/python3.8/site-packages/triton/third_party/cuda/bin/"
+
 # Set entrypoint to activate Conda before running commands
 ENTRYPOINT ["bash", "-c", "source activate chrombpnet_v017 && exec \"$@\"", "--"]
